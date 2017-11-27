@@ -70,9 +70,9 @@ class NNSolver(object):
         t : 1D numpy array
             Training points
 
-        y0_list : a list of float point numbers
+        y0_list : a list of floating point numbers
             Initial condition.
-            For a single ODE, should return a list of one element.
+            For a single ODE, should be a list of one element.
 
         n_hidden : integer, optional
             Number of hidden units of the NN

@@ -74,7 +74,7 @@ class NNSolver(object):
             Initial condition.
             For a single ODE, should return a list of one element.
 
-        n_hidden : integer
+        n_hidden : integer, optional
             Number of hidden units of the NN
         '''
 

@@ -105,8 +105,8 @@ class NNSolver(object):
             y_pred = predict(params, t, y0)
             dydt_pred = predict_dt(params, t, y0)
 
-            y_pred_list.append(y_pred.squeeze())
-            dydt_pred_list.append(dydt_pred.squeeze())
+            y_pred_list.append(y_pred)
+            dydt_pred_list.append(dydt_pred)
 
         f_pred_list = f(t, y_pred_list)
 

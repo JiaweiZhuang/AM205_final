@@ -47,6 +47,7 @@ def predict(params, t, y0, act=np.tanh):
     a = act(np.dot(t, W1) + b1)
     out = np.dot(a, W2) + b2  # standard NN output
 
+    # TODO: start with t0 instead of 0
     y = y0 + t*out  # apply Lagaris et al. (1998)
 
     return y
@@ -70,7 +71,7 @@ class NNSolver(object):
             - Must use autograd's numpy inside f (import autograd.numpy as np)
             - For a single ODE, should return a list of one element.
 
-        t : 1D numpy array
+        t : column vector, i.e. numpy array of shape (n, 1)
             Training points
 
         y0_list : a list of floating point numbers
@@ -82,7 +83,10 @@ class NNSolver(object):
         '''
 
         Nvar = len(y0_list)
-        assert len(f(t[0], y0_list)) == Nvar
+        assert len(f(t[0], y0_list)) == Nvar, \
+            'f and y0_list should have same size'
+
+        assert t.shape == (t.size, 1), 't must be a column vector'
 
         self.Nvar = Nvar
         self.f = f
@@ -189,7 +193,7 @@ class NNSolver(object):
 
         Parameters
         ----------
-        t : 1D numpy array, optional
+        t : column vector, i.e. numpy array of shape (n, 1), optional
             use training points by default
 
         '''

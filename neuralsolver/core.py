@@ -71,10 +71,12 @@ class NNSolver(object):
         self.reset_weights()
 
     def __str__(self):
-        return ('Number of equations:      {} \n'
-                'Initial condition y0:     {} \n'
-                'Numnber of hidden units:  {}'
-                .format(self.Nvar, self.y0_list, self.n_hidden)
+        return ('Neural ODE Solver \n'
+                'Number of equations:       {} \n'
+                'Initial condition y0:      {} \n'
+                'Numnber of hidden units:   {} \n'
+                'Number of training points: {} '
+                .format(self.Nvar, self.y0_list, self.n_hidden, self.t.size)
                 )
 
     def __repr__(self):

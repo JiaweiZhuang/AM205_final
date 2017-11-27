@@ -16,8 +16,7 @@ from autograd import elementwise_grad as egrad
 import autograd.numpy.random as npr
 from autograd.misc.flatten import flatten
 
-# scipy
-# from scipy.integrate import solve_ivp  # for comparision
+# scipy optimizer
 from scipy.optimize import minimize
 
 # A global counter for printing scipy training progress
@@ -58,6 +57,26 @@ predict_dt = egrad(predict, argnum=1)  # element-wise grad w.r.t t
 
 class NNSolver(object):
     def __init__(self, f, t, y0_list, n_hidden=10):
+        '''
+        Neural Network Solver Class
+
+        Parameters
+        ----------
+        f : callable
+            Right-hand side of the ODE system dy/dt = f(t, y).
+            Similar to the input for scipy.integrate.solve_ivp()
+            For a single ODE, should return a list of one element.
+
+        t : 1D numpy array
+            Training points
+
+        y0_list : a list of float point numbers
+            Initial condition.
+            For a single ODE, should return a list of one element.
+
+        n_hidden : integer
+            Number of hidden units of the NN
+        '''
 
         Nvar = len(y0_list)
         assert len(f(t[0], y0_list)) == Nvar
@@ -83,6 +102,7 @@ class NNSolver(object):
         return self.__str__()
 
     def reset_weights(self):
+        '''reset NN weights'''
         self.params_list = [init_weights(n_hidden=self.n_hidden)
                             for _ in range(self.Nvar)]
 
@@ -91,7 +111,7 @@ class NNSolver(object):
         self.unflat_func = unflat_func
 
     def loss_func(self, params_list):
-
+        '''Compute loss function'''
         # params_list should be an explicit input, not from self
 
         # some shortcut
@@ -126,6 +146,21 @@ class NNSolver(object):
         return self.loss_func(params_list)
 
     def train(self, method='BFGS', maxiter=2000, iprint=200):
+        '''
+        Train the neural net
+
+        Parameters
+        ----------
+        method : string, optional
+            Optimization method for scipy.optimize.minimize()
+            'BFGS' should be the most robust one
+
+        maxiter : integer, optional
+            Maximum number of iterations
+
+        maxiter : integer, optional
+            Print loss per iprint step
+        '''
 
         global count
         count = 0  # reset counter for next training
@@ -146,8 +181,17 @@ class NNSolver(object):
         self.params_list = self.unflat_func(opt.x)
 
     def predict(self, t=None):
+        '''
+        Make new predicts
+
+        Parameters
+        ----------
+        t : 1D numpy array, optional
+            use trainig points by default
+
+        '''
         if t is None:
-            t = self.t  # use trainig points by default
+            t = self.t
 
         y_pred_list = []
         dydt_pred_list = []

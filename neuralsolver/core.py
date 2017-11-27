@@ -102,7 +102,7 @@ class NNSolver(object):
         return self.__str__()
 
     def reset_weights(self):
-        '''reset NN weights'''
+        '''reinitialize NN weights (randomly)'''
         self.params_list = [init_weights(n_hidden=self.n_hidden)
                             for _ in range(self.Nvar)]
 
@@ -187,7 +187,7 @@ class NNSolver(object):
         Parameters
         ----------
         t : 1D numpy array, optional
-            use trainig points by default
+            use training points by default
 
         '''
         if t is None:

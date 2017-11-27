@@ -139,7 +139,7 @@ class NNSolver(object):
 
         loss_total = 0.0
         for f_pred, dydt_pred in zip(f_pred_list, dydt_pred_list):
-            loss = np.sum((dydt_pred-f_pred)**2)
+            loss = np.mean((dydt_pred-f_pred)**2)
             loss_total += loss
 
         return loss_total

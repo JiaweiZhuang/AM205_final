@@ -65,7 +65,10 @@ class NNSolver(object):
         f : callable
             Right-hand side of the ODE system dy/dt = f(t, y).
             Similar to the input for scipy.integrate.solve_ivp()
-            For a single ODE, should return a list of one element.
+
+            Important notes:
+            - Must use autograd's numpy inside f (import autograd.numpy as np)
+            - For a single ODE, should return a list of one element.
 
         t : 1D numpy array
             Training points

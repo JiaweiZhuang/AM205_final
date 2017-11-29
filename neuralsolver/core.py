@@ -168,6 +168,9 @@ class NNSolver(object):
         maxiter : integer, optional
             Print loss per iprint step
         '''
+        self.x = [] # updates of x during training
+
+
 
         global count
         count = 0  # reset counter for next training
@@ -178,6 +181,9 @@ class NNSolver(object):
                 print("iteration:", count, "loss: ", self.loss_wrap(x))
             count += 1
 
+            # add new training updates to x
+            self.x.append(x)
+
         opt = minimize(self.loss_wrap, x0=self.flattened_params,
                        jac=grad(self.loss_wrap), method=method,
                        callback=print_loss,
@@ -186,6 +192,7 @@ class NNSolver(object):
         # update parameters
         self.flattened_params = opt.x
         self.params_list = self.unflat_func(opt.x)
+        self.x = np.array(self.x).reshape(len(self.x),-1)
 
     def predict(self, t=None):
         '''

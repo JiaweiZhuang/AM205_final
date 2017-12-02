@@ -19,6 +19,10 @@ from autograd.misc.flatten import flatten
 # scipy optimizer
 from scipy.optimize import minimize
 
+#plot 
+import seaborn as sns
+sns.set()
+
 # A global counter for printing scipy training progress
 # https://stackoverflow.com/questions/16739065/how-to-display-progress-of-scipy-optimize-function
 # TODO: Can we improve this dirty hack?
@@ -51,6 +55,7 @@ def predict(params, t, y0, act=np.tanh):
     y = y0 + t*out  # apply Lagaris et al. (1998)
 
     return y
+   
 
 
 predict_dt = egrad(predict, argnum=1)  # element-wise grad w.r.t t
@@ -60,24 +65,19 @@ class NNSolver(object):
     def __init__(self, f, t, y0_list, n_hidden=10):
         '''
         Neural Network Solver Class
-
         Parameters
         ----------
         f : callable
             Right-hand side of the ODE system dy/dt = f(t, y).
             Similar to the input for scipy.integrate.solve_ivp()
-
             Important notes:
             - Must use autograd's numpy inside f (import autograd.numpy as np)
             - For a single ODE, should return a list of one element.
-
         t : column vector, i.e. numpy array of shape (n, 1)
             Training points
-
         y0_list : a list of floating point numbers
             Initial condition.
             For a single ODE, should be a list of one element.
-
         n_hidden : integer, optional
             Number of hidden units of the NN
         '''
@@ -173,8 +173,9 @@ class NNSolver(object):
 
 
         global count
+        global loss_arr
         count = 0  # reset counter for next training
-
+        loss_arr = []
         def print_loss(x):
             global count
             if count % iprint == 0:
@@ -182,7 +183,8 @@ class NNSolver(object):
             count += 1
 
             # add new training updates to x
-            self.x.append(x)
+            self.x.append(self.unflat_func(x))
+            loss_arr.append(self.loss_wrap(x))
 
         opt = minimize(self.loss_wrap, x0=self.flattened_params,
                        jac=grad(self.loss_wrap), method=method,
@@ -192,9 +194,9 @@ class NNSolver(object):
         # update parameters
         self.flattened_params = opt.x
         self.params_list = self.unflat_func(opt.x)
-        self.x = np.array(self.x).reshape(len(self.x),-1)
+        
 
-    def predict(self, t=None):
+    def predict(self, t=None, params_list=None):
         '''
         Make new predicts
 
@@ -207,13 +209,107 @@ class NNSolver(object):
         if t is None:
             t = self.t
 
-        y_pred_list = []
-        dydt_pred_list = []
-        for params, y0 in zip(self.params_list, self.y0_list):
-            y_pred = predict(params, t, y0)
-            dydt_pred = predict_dt(params, t, y0)
+        if params_list is None:
+            y_pred_list = []
+            dydt_pred_list = []
+            for params, y0 in zip(self.params_list, self.y0_list):
+                y_pred = predict(params, t, y0)
+                dydt_pred = predict_dt(params, t, y0)
 
-            y_pred_list.append(y_pred.squeeze())
-            dydt_pred_list.append(dydt_pred.squeeze())
+                y_pred_list.append(y_pred.squeeze())
+                dydt_pred_list.append(dydt_pred.squeeze())
 
-        return y_pred_list, dydt_pred_list
+            return y_pred_list, dydt_pred_list
+        
+        else:
+            y_pred_list = []
+            for params, y0 in zip(params_list, self.y0_list):
+                y_pred = predict(params, t, y0)
+
+                y_pred_list.append(y_pred.squeeze())
+
+            return y_pred_list
+    def result(self,t = None, anim = False, interval = 50, every_n_iter = 1):
+        '''
+        Note: need to brew install ffmpeg
+        t: array like, evaluate at these points
+        anim: whether to plot animation or not
+        interval: time duration between frames, in ms
+        every_n_iter: plot every n iterations of the trainning process, if num of iteration if large, 
+        increase every_n_iter to save computi
+        '''
+        if t is None:
+            t = self.t
+            
+        
+        if animation:
+            
+            #training animation 
+            y_train = np.array([nn.predict(t = t.reshape(-1,1), params_list=x) for x in nn.x])[::-every_n_iter][::-1]
+            n = y_train.shape[1]
+            
+            
+            fig, ax = plt.subplots(1,2,figsize = (16,6))
+            
+            
+            #ground truth using scipy
+            sol_cont = solve_ivp(self.f, [t.min(), t.max()], self.y0_list, method='Radau', rtol=1e-5)
+            sol_dis = solve_ivp(self.f, t_span = [t.min(), t.max()], t_eval=t, y0 = self.y0_list, method='Radau', rtol=1e-5)
+            y_diff = np.array([np.array(sol_dis.y[i]) for i in range(n)])
+            
+            
+            #set x y limit using min and max of the last iteration
+            ax[0].set_xlim((t[0], t[-1]))
+            ax[0].set_ylim((np.min(y_train[-1,:,:]), np.max(y_train[-1,:,:])))
+            
+            ax[1].set_xlim((t[0], t[-1]))
+            ax[1].set_ylim((np.min(y_train[-1,:,:] - y_diff), np.max(y_train[-1,:,:] - y_diff)))
+            
+            #plot ground truth
+            for i in range(n):
+                ax[0].plot(sol_cont.t, sol_cont.y[i], label='y{}'.format(i+1))
+                        
+            #plots of NN result
+            scatters_pred = []
+            scatters_diff = []
+            for i in range(n):
+        
+                scat1 = ax[0].scatter([], [], label = 'y_pred{}'.format(i+1))
+                scatters_pred.append(scat1)
+                
+                scat2 = ax[1].scatter([], [], label = 'y{}'.format(i+1))
+                scatters_diff.append(scat2)
+            
+            ax[0].legend(loc='upper center', bbox_to_anchor=(0.5, -0.05),fancybox=True, ncol=4)
+            ax[1].legend(loc='upper center', bbox_to_anchor=(0.5, -0.05),fancybox=True, ncol=4)
+            
+            ax[0].set_title("NN Prediction and Truth", fontsize = 18)
+            ax[1].set_title("NN Prediction - Truth", fontsize = 18)
+            # initialization function: plot the background of each frame
+            def init():
+                for k in range(n):
+                    scatters_pred[k].set_offsets(np.hstack(([], [])))
+                    scatters_diff[k].set_offsets(np.hstack(([], [])))
+                return (scatters_pred + scatters_diff)
+            
+            # animation function. This is called sequentially
+            
+            def animate(i):
+                for k in range(n):
+                    scatters_pred[k].set_offsets(np.c_[t, y_train[i,k,:]])
+                    
+                    scatters_diff[k].set_offsets(np.c_[t, y_train[i,k,:] - y_diff[k]])
+                    
+                return (scatters_pred + scatters_diff)
+            
+            # call the animator. blit=True means only re-draw the parts that have changed.
+            anim_pred = animation.FuncAnimation(fig, animate, init_func=init,
+                               frames=y_train.shape[0], interval=interval, blit=True)
+            
+            return anim_pred
+
+    def plot_loss(self):
+        plt.figure(figsize=(8,6))
+        plt.plot(range(len(loss_arr)), loss_arr)
+        plt.title("Loss", fontsize = 18)
+        plt.show()

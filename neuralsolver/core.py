@@ -18,6 +18,7 @@ from autograd.misc.flatten import flatten
 
 # scipy optimizer
 from scipy.optimize import minimize
+from scipy.integrate import solve_ivp
 
 #plot 
 from matplotlib import pyplot as plt

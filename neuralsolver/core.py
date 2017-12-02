@@ -20,6 +20,7 @@ from autograd.misc.flatten import flatten
 from scipy.optimize import minimize
 
 #plot 
+from matplotlib import pyplot as plt
 import seaborn as sns
 sns.set()
 

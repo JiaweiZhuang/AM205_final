@@ -20,8 +20,10 @@ from autograd.misc.flatten import flatten
 from scipy.optimize import minimize
 from scipy.integrate import solve_ivp
 
-#plot 
+#plot animation
 from matplotlib import pyplot as plt
+from matplotlib import animation, rc
+from IPython.display import HTML
 import seaborn as sns
 sns.set()
 

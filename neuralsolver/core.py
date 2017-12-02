@@ -242,7 +242,7 @@ class NNSolver(object):
             t = self.t
             
         
-        if animation:
+        if anim:
             
             #training animation 
             y_train = np.array([nn.predict(t = t.reshape(-1,1), params_list=x) for x in nn.x])[::-every_n_iter][::-1]

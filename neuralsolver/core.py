@@ -330,7 +330,7 @@ class NNSolver(object):
         '''
         plt.figure(figsize=(8,6))
         plt.plot(range(len(loss_arr)), loss_arr)
-        plt.xlabel('Training Iterations")
+        plt.xlabel("Training Iterations")
         plt.ylabel("Loss")
         plt.title("Loss", fontsize = 18)
         plt.show()

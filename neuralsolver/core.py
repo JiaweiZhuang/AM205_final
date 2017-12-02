@@ -234,14 +234,26 @@ class NNSolver(object):
 
             return y_pred_list
     def result(self,t = None, anim = False, interval = 50, every_n_iter = 1):
+
         '''
-        Note: need to brew install ffmpeg
-        t: array like, evaluate at these points
-        anim: whether to plot animation or not
-        interval: time duration between frames, in ms
-        every_n_iter: plot every n iterations of the trainning process, if num of iteration if large, 
-        increase every_n_iter to save computi
+        Plot trainning process at animation
+
+        Parameters
+        ----------
+        t : array, optional
+            evaluate at these points
+
+        anim : bool, optional
+            whether to plot animation or not, default set to False
+
+        interval : integer, optional
+            time duration between frames, in ms, default set to 50 ms
+
+        every_n_iter : integer, optional 
+            plot every n iterations of the trainning process, if num of iteration if large, 
+        increase every_n_iter to save computing, default set to 1, plotting all the iterations
         '''
+
         if t is None:
             t = self.t
             
@@ -313,6 +325,9 @@ class NNSolver(object):
             return anim_pred
 
     def plot_loss(self):
+        '''
+        Plot loss in trainning process 
+        '''
         plt.figure(figsize=(8,6))
         plt.plot(range(len(loss_arr)), loss_arr)
         plt.title("Loss", fontsize = 18)

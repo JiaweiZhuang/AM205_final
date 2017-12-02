@@ -245,7 +245,7 @@ class NNSolver(object):
         if anim:
             
             #training animation 
-            y_train = np.array([self.predict(t = t.reshape(-1,1), params_list=x) for x in nn.x])[::-every_n_iter][::-1]
+            y_train = np.array([self.predict(t = t.reshape(-1,1), params_list=x) for x in self.x])[::-every_n_iter][::-1]
             n = y_train.shape[1]
             
             

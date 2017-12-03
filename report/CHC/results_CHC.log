@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  30 NOV 2017 15:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  2 DEC 2017 23:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -372,20 +372,7 @@ Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 20.
 Package hyperref Info: Option `bookmarksopen' set `true' on input line 20.
 Package hyperref Info: Option `hypertexnames' set `true' on input line 20.
 
-(./results_CHC.aux
-
-LaTeX Warning: Label `eq:LV4' multiply defined.
-
-
-LaTeX Warning: Label `eq:LV5' multiply defined.
-
-
-LaTeX Warning: Label `fig:perf_dist' multiply defined.
-
-
-LaTeX Warning: Label `fig:perf_dist' multiply defined.
-
-)
+(./results_CHC.aux)
 \openout1 = `results_CHC.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
@@ -404,7 +391,8 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
 LaTeX Font Info:    ... okay on input line 38.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 38.
- (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 38.
@@ -478,81 +466,45 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 39.
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 40.
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 44.
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--48
-\OT1/ppl/m/n/10.95 (+20) Overview 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 41--48
-\OT1/ppl/m/n/10.95 (+20) Mathematics 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 41--48
-\OT1/ppl/m/n/10.95 (+20) Results 
- []
-
-LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 53.
-
-Underfull \hbox (badness 10000) in paragraph at lines 54--56
-\OT1/ppl/m/n/10.95 (+20) Overview 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 54--56
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 57--59
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--63
-[]\OT1/ppl/m/n/10.95 (+20) Mathematics 
- []
-
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 64.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 64.
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 44.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 64.
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 44.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 64.
+(Font)              scaled to size 11.40997pt on input line 44.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 64.
+(Font)              scaled to size 8.33606pt on input line 44.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 64.
+(Font)              scaled to size 6.25204pt on input line 44.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 64.
+(Font)              scaled to size 11.40997pt on input line 44.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 64.
+(Font)              scaled to size 8.33606pt on input line 44.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 64.
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 64.
+(Font)              scaled to size 6.25204pt on input line 44.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 44.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1zplm.fd
@@ -562,74 +514,147 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `zplm' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for TS1+ppl on input line 77.
+
+<result_simple.png, id=31, 502.87875pt x 394.47375pt>
+File: result_simple.png Graphic file (type png)
+ <use result_simple.png>
+Package pdftex.def Info: result_simple.png used on input line 88.
+(pdftex.def)             Requested size: 328.82707pt x 257.93977pt.
+
+<loss_simple.png, id=33, 514.92375pt x 400.49625pt>
+File: loss_simple.png Graphic file (type png)
+ <use loss_simple.png>
+Package pdftex.def Info: loss_simple.png used on input line 94.
+(pdftex.def)             Requested size: 328.82707pt x 255.76062pt.
+
+<histogram_simple.png, id=35, 502.87875pt x 394.47375pt>
+File: histogram_simple.png Graphic file (type png)
+
+<use histogram_simple.png>
+Package pdftex.def Info: histogram_simple.png used on input line 104.
+(pdftex.def)             Requested size: 328.82707pt x 257.93977pt.
+
+<extrapo_simple.png, id=37, 495.8525pt x 394.47375pt>
+File: extrapo_simple.png Graphic file (type png)
+ <use extrapo_simple.png>
+Package pdftex.def Info: extrapo_simple.png used on input line 112.
+(pdftex.def)             Requested size: 328.82707pt x 261.59944pt.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 120.
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--123
+\OT1/ppl/m/n/10.95 (+20) Overview 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--123
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--126
+
+ []
+
+[1
+
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[2 <./result_simple.png> <./loss_simple.png>] [3 <./histogram_simple.png> <./ex
+trapo_simple.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 127--130
+[]\OT1/ppl/m/n/10.95 (+20) Mathematics 
+ []
+
+LaTeX Font Info:    Try loading font information for TS1+ppl on input line 144.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 89--91
+Underfull \hbox (badness 10000) in paragraph at lines 156--158
 []\OT1/ppl/m/n/10.95 (+20) Results 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--91
+Underfull \hbox (badness 10000) in paragraph at lines 156--158
 
  []
 
-<LV_compare.png, id=31, 502.87875pt x 387.4475pt>
+<LV_compare.png, id=72, 500.87125pt x 394.47375pt>
 File: LV_compare.png Graphic file (type png)
  <use LV_compare.png>
-Package pdftex.def Info: LV_compare.png used on input line 94.
-(pdftex.def)             Requested size: 328.82707pt x 253.34543pt.
- [1
+Package pdftex.def Info: LV_compare.png used on input line 161.
+(pdftex.def)             Requested size: 328.82707pt x 258.98712pt.
 
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<perf_distribution.png, id=48, 502.87875pt x 397.485pt>
+<loss_LV2.png, id=73, 514.92375pt x 400.49625pt>
+File: loss_LV2.png Graphic file (type png)
+ <use loss_LV2.png>
+Package pdftex.def Info: loss_LV2.png used on input line 167.
+(pdftex.def)             Requested size: 328.82707pt x 255.76062pt.
+
+<perf_distribution.png, id=77, 500.87125pt x 394.47375pt>
 File: perf_distribution.png Graphic file (type png)
 
 <use perf_distribution.png>
-Package pdftex.def Info: perf_distribution.png used on input line 108.
-(pdftex.def)             Requested size: 328.82707pt x 259.90878pt.
- [2 <./LV_compare.png>]
-<LV_Compare_3_species.png, id=59, 504.88625pt x 397.485pt>
+Package pdftex.def Info: perf_distribution.png used on input line 186.
+(pdftex.def)             Requested size: 328.82707pt x 258.98712pt.
+
+<extrapo_LV2.png, id=79, 506.89375pt x 394.47375pt>
+File: extrapo_LV2.png Graphic file (type png)
+ <use extrapo_LV2.png>
+Package pdftex.def Info: extrapo_LV2.png used on input line 194.
+(pdftex.def)             Requested size: 328.82707pt x 255.9053pt.
+
+[4] [5 <./LV_compare.png> <./loss_LV2.png>] [6 <./perf_distribution.png> <./ext
+rapo_LV2.png>] <LV_Compare_3_species.png, id=104, 503.8825pt x 394.47375pt>
 File: LV_Compare_3_species.png Graphic file (type png)
 
 <use LV_Compare_3_species.png>
-Package pdftex.def Info: LV_Compare_3_species.png used on input line 143.
-(pdftex.def)             Requested size: 328.82707pt x 258.87772pt.
- [3 <./perf_distribution.png>]
-<VDP_non_uniform.png, id=68, 500.87125pt x 394.47375pt>
-File: VDP_non_uniform.png Graphic file (type png)
+Package pdftex.def Info: LV_Compare_3_species.png used on input line 227.
+(pdftex.def)             Requested size: 328.82707pt x 257.42815pt.
 
-<use VDP_non_uniform.png>
-Package pdftex.def Info: VDP_non_uniform.png used on input line 177.
+<extrapo_LV3.png, id=107, 500.87125pt x 394.47375pt>
+File: extrapo_LV3.png Graphic file (type png)
+ <use extrapo_LV3.png>
+Package pdftex.def Info: extrapo_LV3.png used on input line 238.
 (pdftex.def)             Requested size: 328.82707pt x 258.98712pt.
-File: perf_distribution.png Graphic file (type png)
- <use perf_distribution.png>
-Package pdftex.def Info: perf_distribution.png used on input line 184.
-(pdftex.def)             Requested size: 328.82707pt x 259.90878pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
- [4 <./LV_Compare_3_species.png>] [5 <./VDP_non_uniform.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
+
+[7] [8 <./LV_Compare_3_species.png> <./extrapo_LV3.png>]
+<VDP_uniform_good.png, id=131, 500.87125pt x 394.47375pt>
+File: VDP_uniform_good.png Graphic file (type png)
+
+<use VDP_uniform_good.png>
+Package pdftex.def Info: VDP_uniform_good.png used on input line 278.
+(pdftex.def)             Requested size: 328.82707pt x 258.98712pt.
+ <VDP_DIst.png, id=132, 500.87125pt x 394.47375pt>
+File: VDP_DIst.png Graphic file (type png)
+
+<use VDP_DIst.png>
+Package pdftex.def Info: VDP_DIst.png used on input line 285.
+(pdftex.def)             Requested size: 328.82707pt x 258.98712pt.
+ <extrapo_VDP.png, id=133, 500.87125pt x 394.47375pt>
+File: extrapo_VDP.png Graphic file (type png)
+
+<use extrapo_VDP.png>
+Package pdftex.def Info: extrapo_VDP.png used on input line 291.
+(pdftex.def)             Requested size: 328.82707pt x 258.98712pt.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 306.
+ [9 <./VDP_uniform_good.png>] [10 <./VDP_DIst.png> <./extrapo_VDP.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 306.
  (./results_CHC.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 196.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 306.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 306.
 Package rerunfilecheck Info: File `results_CHC.out' has not changed.
 (rerunfilecheck)             Checksum: B2CA27F3A7D7AD67350E8F1146F4EF63;477.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 306.
  ) 
 Here is how much of TeX's memory you used:
- 8018 strings out of 493014
- 122446 string characters out of 6133351
- 234806 words of memory out of 5000000
- 11374 multiletter control sequences out of 15000+600000
- 22447 words of font info for 85 fonts, out of 8000000 for 9000
+ 8108 strings out of 493014
+ 123804 string characters out of 6133351
+ 237872 words of memory out of 5000000
+ 11425 multiletter control sequences out of 15000+600000
+ 23043 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 31i,7n,38p,439b,347s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 31i,7n,38p,490b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
 xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texl
@@ -638,10 +663,10 @@ ve/2016/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2
 016/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2016/tex
 mf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2016/texmf-dist
 /fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on results_CHC.pdf (5 pages, 179425 bytes).
+Output written on results_CHC.pdf (10 pages, 344066 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
- 92 compressed objects within 1 object stream
- 26 named destinations out of 1000 (max. 500000)
- 11333 words of extra memory for PDF output out of 12000 (max. 10000000)
+ 188 PDF objects out of 1000 (max. 8388607)
+ 141 compressed objects within 2 object streams
+ 44 named destinations out of 1000 (max. 500000)
+ 11378 words of extra memory for PDF output out of 12000 (max. 10000000)
 

@@ -198,6 +198,7 @@ class NNSolver(object):
         # update parameters
         self.flattened_params = opt.x
         self.params_list = self.unflat_func(opt.x)
+        self.loss_arr = loss_arr
         
 
     def predict(self, t=None, params_list=None):

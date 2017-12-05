@@ -97,7 +97,7 @@ class NNSolver(object):
         self.t = t
         self.y0_list = y0_list
         self.n_hidden = n_hidden
-
+        self.loss = 0
         self.reset_weights()
 
     def __str__(self):

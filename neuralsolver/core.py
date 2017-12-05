@@ -196,7 +196,7 @@ class NNSolver(object):
                        options={'disp': True, 'maxiter': maxiter})
 
         # update parameters
-        self.loss_arr = loss_arr
+        self.loss = loss_arr
         self.flattened_params = opt.x
         self.params_list = self.unflat_func(opt.x)
 

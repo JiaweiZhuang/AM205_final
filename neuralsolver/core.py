@@ -97,7 +97,7 @@ class NNSolver(object):
         self.t = t
         self.y0_list = y0_list
         self.n_hidden = n_hidden
-
+        self.loss = 0
         self.reset_weights()
 
     def __str__(self):
@@ -196,8 +196,10 @@ class NNSolver(object):
                        options={'disp': True, 'maxiter': maxiter})
 
         # update parameters
+        self.loss = loss_arr
         self.flattened_params = opt.x
         self.params_list = self.unflat_func(opt.x)
+
         
 
     def predict(self, t=None, params_list=None):
